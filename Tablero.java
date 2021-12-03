@@ -23,7 +23,5 @@ public class Tablero {
             }
             System.out.print("\n");
         }
-
-    }
-    
+    } 
 }
