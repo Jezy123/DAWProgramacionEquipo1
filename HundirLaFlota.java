@@ -1,5 +1,5 @@
 public class HundirLaFlota {
-    public static void createShips(int numShips, int[][] shipPlaces) {
+    public static void crearBarcos(int numShips, int[][] shipPlaces) {
         int r1, r2;
         int cont = 0;
     
@@ -14,6 +14,6 @@ public class HundirLaFlota {
     }
     public static void main(String[] args) {
         int[][] shipPlaces=new int[8][8];
-        createShips(10, shipPlaces);    
+        crearBarcos(10, shipPlaces);    
     }
 }
