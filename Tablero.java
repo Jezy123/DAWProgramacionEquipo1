@@ -18,8 +18,14 @@ public class Tablero {
                     System.out.print(letras[cont] + " ");
                     cont++;
                 }
-                //se imprimen los valores de la matriz 
-                System.out.print(matriz[i][j] +  " ");
+                //se imprimen los valores de la matriz dependiendo del valor se imprimira un caracter o otro
+                if (matriz[i][j]== 0){
+                    System.out.print(". ");
+                }else if (matriz[i][j]== 1){
+                    System.out.print("+ ");
+                }else{
+                    System.out.print("X ");
+                }
             }
             System.out.print("\n");
         }
