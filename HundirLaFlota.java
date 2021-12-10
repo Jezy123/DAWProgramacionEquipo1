@@ -48,20 +48,17 @@ public class HundirLaFlota {
 
 //EL MAIN
     public static void main(String[] args) {
-
         //cremamos el tablero vacio de 8x8
         int[][] tablero;
         tablero = new int [8][8];
-
         //Rellenamos el tablero con los barcos aleatorios
         crearBarcos(10, tablero);
-        
+        int numsBarcos = 0;
         //pedimos al usuario la fila y la columna que quiere ver
         Scanner sc = new Scanner(System.in);
         char fila = Utilidades.leerCaracter("Escribe la fila (Letra en Mayus)= ");
         int columna = Utilidades.leerEntero("Escribe la columna (Numero)= ");
         sc.close(); 
-        
         //creamos el FORMATO DE LA TABLA (A - H) (1 - 8)
         int numFila = fila - 'A';
         columna--;
@@ -70,6 +67,5 @@ public class HundirLaFlota {
             tablero[numFila][columna] += 2;
         }
             imprimirTablero(tablero);
-        
     }
 }
