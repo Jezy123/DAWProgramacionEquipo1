@@ -24,7 +24,7 @@ public class HundirLaFlota {
         //Creamos un array donde ponemos las letras a imprimir
         char[] letras = {'A','B','C','D','E','F','G','H'};
         int cont = 0;
-        
+
         int respuesta;
         switch (fila) {
             case "A":
@@ -55,11 +55,11 @@ public class HundirLaFlota {
             default:
                 break;
         }
-
         //rellenamos la matriz con valores aleatorios del 0 al 3
         Utilidades.rellenaMatriz(matriz, 0, 3);
         //imprimo la parte superior de los numeros 
-        System.out.println("  1 2 3 4 5 6 7 8 ");
+        System.out.println("  1 2 3 4 5 6 7 8");
+
         //recorremos la matriz
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
