@@ -18,9 +18,8 @@ public class HundirLaFlota {
     }
 
     //CREAMOS EL TABLERO
-    public static void crearTablero(String fila,int columna) {
-        int [][] matriz;
-        matriz = new int [8][8];
+    public static void imprimirTablero(String fila,int columna) {
+        
         //Creamos un array donde ponemos las letras a imprimir
         char[] letras = {'A','B','C','D','E','F','G','H'};
         int cont = 0;
@@ -55,8 +54,6 @@ public class HundirLaFlota {
             default:
                 break;
         }
-        //rellenamos la matriz con valores aleatorios del 0 al 3
-        Utilidades.rellenaMatriz(matriz, 0, 3);
         //imprimo la parte superior de los numeros 
         System.out.println("  1 2 3 4 5 6 7 8");
 
@@ -69,16 +66,8 @@ public class HundirLaFlota {
                     cont++;
                 }
                 //se imprimen los valores de la matriz dependiendo del valor se imprimira un caracter o otro
-               if (matriz[i][j]== 0){
-                    System.out.print("O ");
-                }else if (matriz[i][j]== 1){
-                    System.out.print("X ");
-                }else{
-                    System.out.print("  ");
-                }
-            }
-            System.out.print("\n");
-    } 
+}
+}
 }
 //EL MAIN
     public static void main(String[] args) {
@@ -92,6 +81,10 @@ public class HundirLaFlota {
         System.out.print("Escribe la columna (Numero)= ");
         int columna = sc.nextInt();
         sc.close();
-        crearTablero(fila,columna);    
+        imprimirTablero(fila,columna); 
+        
+        //creamos el tablero
+        int [][] matriz;
+        matriz = new int [8][8];
     }
 }
