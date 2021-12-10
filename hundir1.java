@@ -52,7 +52,7 @@ public class hundir1 {
         tablero = new int [8][8];
         //Rellenamos el tablero con los barcos aleatorios
         crearBarcos(10, tablero);
-        int numsBarcos = 0;
+        
         //pedimos al usuario la fila y la columna que quiere ver
         
         char fila = Utilidades.leerCaracter("Escribe la fila (Letra en Mayus)= ");
