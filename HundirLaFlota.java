@@ -52,6 +52,8 @@ public class HundirLaFlota {
         crearBarcos(10, tablero);
 
         imprimirTablero(tablero);
+        int numBarcos = 0;
+        do{
             char fila = Utilidades.leerCaracter("Escoge una fila (Letra Mayuscula): ");
             int numColumna = Utilidades.leerEntero("Escoge una columna(Numero): ");
             int numFila = fila - 'A';
@@ -60,8 +62,12 @@ public class HundirLaFlota {
             if (tablero[numFila][numColumna] == 0 || tablero[numFila][numColumna] == 1){
                 tablero[numFila][numColumna] += 2;
             }
+            if(tablero[numFila][numColumna] == 3){
+                numBarcos++;
+            }
         
          imprimirTablero(tablero);
+        }while(numBarcos != 10);
     }    
 }
 
