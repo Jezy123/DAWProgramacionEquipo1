@@ -4,7 +4,7 @@ public class Utilidades {
 	static Scanner inputValue = new Scanner(System.in);
 
 	public static int leerEntero(String mensaje) {
-		System.out.println(mensaje);
+		System.out.print(mensaje);
 		return inputValue.nextInt();
 
 	}
@@ -16,7 +16,7 @@ public class Utilidades {
 	}
 
 	public static char leerCaracter(String mensaje) {
-		System.out.println(mensaje);
+		System.out.print(mensaje);
 		// Leemos toda una cadena
 		String cadena = inputValue.next();
 		// y nos quedamos con el carácter 0 (el primero)

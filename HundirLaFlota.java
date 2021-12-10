@@ -17,74 +17,59 @@ public class HundirLaFlota {
         }
     }
 
-    //CREAMOS EL TABLERO
-    public static void imprimirTablero(String fila,int columna) {
-        
-        //Creamos un array donde ponemos las letras a imprimir
-        char[] letras = {'A','B','C','D','E','F','G','H'};
-        int cont = 0;
-
-        int respuesta;
-        switch (fila) {
-            case "A":
-                respuesta = 0;
-                break;
-            case "B":
-                respuesta = 1;
-                break;
-            case "C":
-                respuesta = 2;
-                break;
-            case "D":
-                respuesta = 3;
-                break;
-            case "E":
-                respuesta = 4;
-                break;
-            case "F":
-                respuesta = 5;
-                break;
-            case "G":
-                respuesta = 6;
-                break;
-            case "H":
-                respuesta = 7;
-                break;
-        
-            default:
-                break;
-        }
-        //imprimo la parte superior de los numeros 
+    public static void imprimirTablero(int[][] tablero) {
+        char letra = 'A';
         System.out.println("  1 2 3 4 5 6 7 8");
 
-        //recorremos la matriz
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                //si es el primer valor del array imprimimos la primera letra almacenada en el array 
-                if (j == 0){
-                    System.out.print(letras[cont] + " ");
-                    cont++;
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(letra + " ");
+            letra++;
+            for (int j = 0; j < tablero.length; j++) {
+                switch (tablero[i][j]) {
+                    case 0:
+                    case 1:
+                        System.out.print(" ");
+                        break;
+                    case 2:
+                        System.out.print("O ");
+                        break;
+                    case 3:
+                        System.out.print("X ");
+                        break;
+                    default:
+                        break;
                 }
-                //se imprimen los valores de la matriz dependiendo del valor se imprimira un caracter o otro
-}
-}
-}
+            }
+
+            System.out.println();
+        }
+    }
+
+
 //EL MAIN
     public static void main(String[] args) {
-        int[][] plazasBarco=new int[8][8];
-        crearBarcos(10, plazasBarco);
-        
-        System.out.print("Escribe la fila (Letra)= ");
-        Scanner sc = new Scanner(System.in);
-        String fila = sc.nextLine();
 
-        System.out.print("Escribe la columna (Numero)= ");
-        int columna = sc.nextInt();
-        sc.close();
-        imprimirTablero(fila,columna); 
+        //cremamos el tablero vacio de 8x8
+        int[][] tablero;
+        tablero = new int [8][8];
+
+        //Rellenamos el tablero con los barcos aleatorios
+        crearBarcos(10, tablero);
         
-        //creamos el tablero
-        int [][] matriz;
-        matriz = new int [8][8];
+        //pedimos al usuario la fila y la columna que quiere ver
+        Scanner sc = new Scanner(System.in);
+        char fila = Utilidades.leerCaracter("Escribe la fila (Letra en Mayus)= ");
+        int columna = Utilidades.leerEntero("Escribe la columna (Numero)= ");
+        sc.close(); 
+        
+        //creamos el FORMATO DE LA TABLA (A - H) (1 - 8)
+        int numFila = fila - 'A';
+        columna--;
+
+        if (tablero[numFila][columna] == 0 || tablero[numFila][columna] == 1){
+            tablero[numFila][columna] += 2;
+        }
+            imprimirTablero(tablero);
+        
     }
 }
