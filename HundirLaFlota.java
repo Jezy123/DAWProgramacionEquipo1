@@ -13,6 +13,7 @@ public class HundirLaFlota {
                 cont++;
             }
         }
+        
     }
 
     public static void imprimirTablero(int[][] tablero) {
@@ -26,7 +27,7 @@ public class HundirLaFlota {
                 switch (tablero[i][j]) {
                     case 0:
                     case 1:
-                        System.out.print(".");
+                        System.out.print(". ");
                         break;
                     case 2:
                         System.out.print("O ");
@@ -48,7 +49,7 @@ public class HundirLaFlota {
         tablero = new int[8][8];
 
         crearBarcos(10, tablero);
-        
+
         imprimirTablero(tablero);
             char fila = Utilidades.leerCaracter("Escoge una fila (Letra Mayuscula): ");
             int numColumna = Utilidades.leerEntero("Escoge una columna(Numero): ");
@@ -59,7 +60,7 @@ public class HundirLaFlota {
                 tablero[numFila][numColumna] += 2;
             }
         
-            imprimirTablero(tablero);
+         imprimirTablero(tablero);
     }    
 }
 
