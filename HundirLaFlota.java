@@ -2,9 +2,10 @@
 public class HundirLaFlota {
 
     public static void crearBarcos(int numBarcos, int[][] numPlazas) {
+        //CREAMOS LOS 1 DE FORMA ALEATORIA PARA INDICAR LAS POSICIONES DE LOS BARCOS.
         int r1, r2;
         int cont = 0;
-    
+        //Transformamos posiciones aleatoria en el tablero, en 1 para indicar que hay un barco.
         while (cont < numBarcos) {
             r1 = (int) (Math.random()*8); 
             r2 = (int) (Math.random()*8);
@@ -27,7 +28,7 @@ public class HundirLaFlota {
                 switch (tablero[i][j]) {
                     case 0:
                     case 1:
-                        System.out.print(". ");
+                        System.out.print("  ");
                         break;
                     case 2:
                         System.out.print("O ");
