@@ -16,7 +16,7 @@ public class HundirLaFlota {
         }
         
     }
-
+    // creamos un metodo para imprimir el tablero
     public static void imprimirTablero(int[][] tablero) {
         char letra = 'A';
         System.out.println("  1 2 3 4 5 6 7 8");
@@ -45,14 +45,15 @@ public class HundirLaFlota {
         }
     }
     public static void main(String[] args) {
-
+        // creamos nuestro tablero
         int[][] tablero;
         tablero = new int[8][8];
-
+        // llenamos el tablero con los barcos y lo imprimimos
         crearBarcos(10, tablero);
 
         imprimirTablero(tablero);
         int numBarcos = 0;
+        // Pedimos las posiciones al usuario y comprobamos si hay barco o no y repetimos hasta que undamos los 10 barcos.
         do{
             char fila = Utilidades.leerCaracter("Escoge una fila (Letra Mayuscula): ");
             int numColumna = Utilidades.leerEntero("Escoge una columna(Numero): ");
